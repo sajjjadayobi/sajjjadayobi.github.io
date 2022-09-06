@@ -6,3 +6,7 @@ Creative is a one page Bootstrap theme for creatives, small businesses, and othe
 The theme includes a number of rich features and plugins that you can use as a great boilerplate for your next Jekyll project! 
 
 See it live in action at <sajjjadayobi.github.io>
+
+
+### TODO:
+- Add publication section (maybe)
