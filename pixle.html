@@ -1,0 +1,1137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+/* Theme adapted from https://codemirror.net/theme/dracula.css */
+/*
+    Name:       dracula
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+
+    Original dracula color scheme by Zeno Rocha (https://github.com/zenorocha/dracula-theme)
+*/
+
+.cm-s-inner {
+  padding: 0.5rem 0.2rem;
+  border: 1px solid var(--accent-color) !important;
+  border-radius: 0.25rem;
+}
+
+.cm-s-inner.CodeMirror, .cm-s-inner .CodeMirror-gutters {
+  background-color: #282a36 !important;
+  color: #f8f8f2 !important;
+  border: none;
+}
+
+.cm-s-inner .CodeMirror-gutters {
+  width: 5ch;
+  color: #282a36;
+}
+.cm-s-inner .CodeMirror-cursor { border-left: solid thin #f8f8f2 !important; }
+.cm-s-inner .CodeMirror-linenumber {
+  width: 4ch !important;
+  color: #6D8A88;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-inner span.cm-comment { color: #6272a4; }
+.cm-s-inner span.cm-string, .cm-s-inner span.cm-string-2 { color: #f1fa8c; }
+.cm-s-inner span.cm-number { color: #bd93f9; }
+.cm-s-inner span.cm-variable, .cm-s-inner span.cm-variable-2 { color: #50fa7b; }
+.cm-s-inner span.cm-def { color: white; }
+.cm-s-inner span.cm-operator { color: #ff79c6; }
+.cm-s-inner span.cm-keyword { color: #ff79c6; }
+.cm-s-inner span.cm-atom { color: #bd93f9; }
+.cm-s-inner span.cm-meta { color: #f8f8f2; }
+.cm-s-inner span.cm-tag { color: #ff79c6; }
+.cm-s-inner span.cm-attribute { color: #50fa7b; }
+.cm-s-inner span.cm-qualifier { color: #50fa7b; }
+.cm-s-inner span.cm-property { color: #66d9ef; }
+.cm-s-inner span.cm-builtin { color: #50fa7b; }
+.cm-s-inner span.cm-variable-3, .cm-s-inner span.cm-type { color: #ffb86c; }
+
+.cm-s-inner .CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
+.cm-s-inner .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+.CodeMirror-selectedtext, .CodeMirror-selected {
+  background: #313746 !important;
+  text-shadow: none;
+}
+/* 
+  Middle East - Night
+  Typora RTL theme
+  design: isapanah.com
+  date: 2019
+  version: 1.1
+*/
+
+@import url("file:////home/sad/snap/typora/72/.config/Typora/themes/");
+
+/*
+  Vazir provided by Rastikerdar
+  Downloaded from `https://github.com/rastikerdar/vazir-font`
+*/
+/*
+	Cousine provided by Steve Matteson from Google Fonts
+	Downloaded from `https://fonts.google.com/specimen/Cousine`
+*/
+/** ROOT VARIABLES **/
+
+:root {
+  --bg-color: #1e2022; /* change background */
+  --text-color: #dddddd; /* change text color */
+  --md-char-color: #5b5b5b; /* change color of meta characetrs like `*` in markdown */
+  --meta-content-color: #757575; /* change color of meta contents like image text or link address in markdown */
+  --link-color: #6bcafb; /* change color of hyperlinks */
+
+  --primary-color: #428bca; /* primary color */
+  --primary-btn-border-color: #285e8e; /* primary color for buttons */
+  --primary-btn-text-color: #fff; /* primary text color for buttons */
+  --accent-color: #3c3c3c; /* background accent color */
+
+  --window-border: 1px solid #16161a; /* border for sidebar, etc*/
+
+  --active-file-bg-color: #16161a; /* background color if list item in file tree or file list*/
+  --active-file-text-color: inherit; /* text color for selected file */
+  --active-file-border-color: #777; /* border color for selected file */
+  --active-search-item-bg-color: #212121; /* background color for active search item */
+
+  --side-bar-bg-color: #2b2b2b; /* change background of sidebar*/
+  --item-hover-bg-color: var(--bg-color); /* background of control items when hover, like menu in sidebar*/
+  --item-hover-text-color: white; /* text color upon hovering over menu items */
+  --search-hit-bg-color: #428bca40;
+  --search-select-text-color: var(--text-color); /* Text color for selected searched text */
+  --search-select-bg-color: #428bca90; /* Background color for selected searched text */
+  --rawblock-edit-panel-bd: var(--accent-color); /* Background color for inline HTML "edit panel" blocks */
+  --monospace: "Cousine"; /* monospace font for codes, fences */
+
+  --megamenu-bg-color: var(--side-bar-bg-color); /* background color for unibody megamenu */
+  --megamenu-sidebar-bg-color: var(--bg-color); /* background color for megamenu sidebar */
+  --megamenu-sidebar-hover-bg-color: #161819; /* background color for hovering megamenu sidebar items */
+  --megamenu-sidebar-active-bg-color: #101010; /* background color for active megamenu sidebar items */
+  --megamenu-button-border-color: #9292928f; /* background color for megamenu buttons */
+  --megamenu-item-hover-bg-color: var(--bg-color); /* background color for hovering megamenu items */
+  --megamenu-item-hover-text-color: white; /* text color for hovering megamenu items */
+}
+
+/** TAGS **/
+
+html,
+body {
+  font-family: "Vazir", "Lato", sans-serif;
+}
+
+body {
+  font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, p, a, del, mark, #write p, #write a, #write del, #write mark, #write ul, #write li, #write ol,
+#write table, #write tr, #write td, table, tr, td {
+  direction: rtl;
+}
+
+.outline-item{
+  direction: rtl;
+}
+.outline-h2, .outline-h3, .outline-h4,
+ .outline-h5, .outline-h6 {
+  margin-right: 10px !important;
+}
+
+#md-notification, #md-notification *{
+  direction: ltr;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Vazir-Bold";
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 0.7rem 0;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin: 0.2rem 0;
+}
+
+h5 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+h6 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+a {
+  color: var(--link-color);
+}
+
+del {
+  color: var(--md-char-color);
+}
+
+mark {
+  padding: 2px 1px;
+  background: #fee405;
+}
+
+/* Writing area -> line height */
+#write {
+	line-height: 1.6;
+}
+
+/* Custom list-style */
+#write ol,
+#write ul {
+  padding-left: 2rem;
+  margin: 0.5rem 0;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+#write ul {
+  list-style-type: disc;
+}
+
+#write ol > li,
+#write ul > li {
+  color: var(--primary-color);
+  padding-left: 0.25em;
+}
+
+#write ol li > *,
+#write ul li > * {
+  color: var(--text-color);
+}
+
+#write .md-task-list-item {
+  transition: all 0.3s;
+}
+
+#write .md-task-list-item > input {
+  -webkit-appearance: initial;
+  display: block;
+  position: absolute;
+  border: 1px solid var(--md-char-color);
+  border-radius: 0.25rem;
+  margin-top: 0.1rem;
+  margin-right: -1.8rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  transition: background 0.4s;
+  right: 0;
+}
+
+#write .md-task-list-item > input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#write .md-task-list-item > input:hover {
+  background: var(--accent-color);
+}
+
+#write .md-task-list-item.task-list-done > p {
+  color: var(--md-char-color);
+  text-decoration: line-through;
+}
+
+#write .md-task-list-item > input[checked]::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 60%;
+  width: 2px;
+  transform: rotate(40deg);
+  background: var(--text-color);
+}
+
+#write .md-task-list-item > input[checked]::after {
+  content: "";
+  position: absolute;
+  top: 46%;
+  left: 25%;
+  height: 30%;
+  width: 2px;
+  transform: rotate(-40deg);
+  background: var(--text-color);
+}
+
+blockquote {
+  margin: 1rem 0rem 1rem 0;
+  font-family: "Vazir-Bold";
+}
+
+blockquote p::before {
+  content: "";
+  position: absolute;
+  right: -2rem;
+  height: 100%;
+  width: 0.25rem;
+  background: var(--primary-color);
+}
+
+blockquote p:not(:last-child):before {
+  height: calc(100% + 1rem);
+}
+
+code,
+.md-fences,
+tt {
+  font-family: "Cousine", monospace;
+  font-size: 1rem;
+}
+
+code {
+  border: 1px solid var(--accent-color);
+  border-radius: 0.25rem;
+  padding: 0 0.125rem;
+}
+
+/* Code auto-suggest list menu */
+#fences-auto-suggest .active {
+  background: var(--accent-color);
+}
+
+hr {
+  border-color: var(--md-char-color);
+}
+
+/* YAML */
+pre.md-meta-block {
+  background-color: transparent;
+  border-bottom: 1px solid var(--md-char-color);
+  padding-bottom: 1rem;
+  opacity: 0.8;
+}
+
+/* Tables */
+table {
+  border: 1px solid var(--md-char-color);
+  margin: 1rem 0;
+}
+
+thead {
+  background: #4d4d4d;
+}
+
+table tr:nth-child(2n) {
+  background: var(--accent-color);
+}
+
+td,
+th {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--md-char-color);
+}
+
+/* Table toolbar */
+.md-table-edit {
+  border-top: 1px solid var(--meta-content-color);
+  margin-top: -29px !important;
+  padding: 3px 0;
+}
+
+/* Table drag areas */
+.typora-table-drag-area::after {
+  content: "";
+  position: absolute;
+  border: 2px solid var(--text-color);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+#typora-table-row-tracker .typora-table-drag-area::after {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+}
+
+#typora-table-col-tracker .typora-table-drag-area::after {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 0;
+}
+
+#typora-table-row-tracker .typora-table-drag-area:hover::after,
+#typora-table-col-tracker .typora-table-drag-area:hover::after {
+  opacity: 1;
+}
+
+/* Table of contents */
+.md-toc-tooltip {
+  z-index: 10;
+}
+
+span.md-toc-item {
+  font-size: 1.1rem;
+  color: var(--primary-btn-border-color);
+}
+
+span.md-toc-h1 {
+  font-family: "Vazir-Bold";
+  font-size: 1.3rem;
+}
+
+span.md-toc-h2 {
+  font-size: 1.2rem;
+}
+
+/* Footnote */
+sup.md-footnote {
+  font-family: "Vazir-Bold";
+  font-size: 0.8rem;
+  padding: 0 4px;
+}
+
+span.md-def-split {
+  min-width: 1ch;
+}
+
+.md-def-name::before,
+.md-def-name::after {
+  color: var(--meta-content-color);
+}
+
+/* Writing area */
+#write {
+  width: 90%;
+  max-width: 700px;
+}
+
+/* Fill whole width of container */
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6,
+#write p,
+#write pre {
+  width: auto;
+}
+
+/* Header prefix symbol */
+/* Disable default header symbol */
+#write h3.md-focus::before,
+#write h4.md-focus::before,
+#write h5.md-focus::before,
+#write h6.md-focus::before {
+  border: none;
+  border-radius: 0;
+  left: auto;
+  float: none;
+  padding: 0;
+  vertical-align: baseline;
+  line-height: 20px;
+}
+
+#write h1::before,
+#write h2::before,
+#write h3::before,
+#write h4::before,
+#write h5::before,
+#write h6::before {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 10px);
+  color: var(--md-char-color);
+  font-size: 1rem;
+  font-weight: bold;
+  font-variant: "small-caps";
+}
+
+#write h1::before {
+  content: "H1";
+  top: 0.7rem;
+}
+
+#write h2::before {
+  content: "H2";
+  top: 0.37rem;
+}
+
+#write h3::before {
+  content: "H3";
+  top: 0.15rem;
+}
+
+#write h4::before {
+  content: "H4";
+}
+
+#write h5::before {
+  content: "H5";
+}
+
+#write h6::before {
+  content: "H6";
+}
+
+/* Image meta text */
+#write .md-image > .md-meta {
+  color: var(--meta-content-color);
+}
+
+/* Inline styles */
+.md-rawblock-tooltip {
+  top: -1.5rem;
+  height: 1.5rem;
+  padding: 0.25rem;
+}
+
+/* Search results */
+.md-search-hit {
+  background: var(--search-hit-bg-color);
+  border-radius: 0.125em;
+}
+
+.md-search-select {
+  background: var(--search-select-bg-color);
+  border: 1px solid var(--megamenu-button-border-color);
+  padding: 0 1px;
+}
+
+/* Focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) *,
+.on-focus-mode pre.md-end-block:not(.md-focus):not(.md-focus-container) {
+  color: var(--md-char-color) !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) img,
+.on-focus-mode
+  blockquote
+  .md-end-block:not(.md-focus):not(.md-focus-container)::before,
+.on-focus-mode li:not(.md-focus-container)::before {
+  opacity: 0.5;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) mark {
+  background: var(--accent-color);
+}
+
+/* UI Sidebar */
+#typora-sidebar {
+  border-right: 1px solid #19191c;
+}
+
+.sidebar-tabs {
+  font-family: "Vazir-Bold";
+  border-bottom: 1px solid black;
+}
+
+.file-list-item-file-name {
+  font-family: "Vazir-Bold";
+  font-size: 1.2rem;
+}
+
+input.file-list-item-file-name, input.file-tree-rename-input {
+  background: var(--side-bar-bg-color);
+}
+
+#file-library-search .file-list-item-file-name {
+  font-size: 1.1rem;
+}
+
+#file-library-search .ty-search-item.active {
+  background: var(--active-search-item-bg-color);
+}
+
+#file-library-search-input {
+  background: var(--side-bar-bg-color);
+}
+
+.file-list-item-summary,
+.ty-search-item-line {
+  font-family: "Vazir", "Lato", sans-serif;
+}
+
+.ty-file-search-match-text,
+.ty-outline-hit {
+  font-weight: bold;
+  background: transparent;
+}
+
+#outline-content {
+  line-height: 1.4em;
+}
+
+#outline-content .outline-h1 > .outline-item {
+  font-family: "Vazir-Bold";
+}
+
+.file-library-node,
+.file-library-node .file-node-background {
+  transition: background 0.4s;
+}
+
+.file-tree-node.file-library-file-node:not(.active):hover .file-node-background,
+.file-list-item.file-library-node:not(.active):hover {
+  background: var(--item-hover-bg-color);
+}
+
+.file-tree-node.file-library-file-node.active .file-node-background,
+.file-list-item.file-library-file-node.active {
+  border-left: 5px solid var(--primary-color);
+}
+
+/* Remove blinking animation when updating filename */
+.blink-area {
+  animation: none;
+}
+
+#ty-sidebar-footer {
+  border-top: 1px solid black;
+}
+
+.sidebar-footer-item {
+  transition: background 0.3s;
+}
+
+.outline-title-wrapper,
+.outline-item-wrapper.outline-h1 > .outline-item {
+  font-family: "Vazir-Bold";
+  font-weight: bold;
+}
+
+/* Windows-specific */
+/* Context and dropdown menus */
+ul.dropdown-menu li.active a,
+ul.dropdown-menu li.has-extra-menu.active a,
+ul.dropdown-menu li.has-btn-submenu a.menu-style-btn.active,
+#footer-word-count-info .ty-footer-word-count-all tr:hover,
+#ty-spell-check-dict-missing-menu li:hover,
+.ty-spell-check-panel-item.ty-active,
+.ty-spell-check-panel-item:hover {
+  background: var(--text-color) !important;
+  color: var(--bg-color) !important;
+}
+
+/* Windows Unibody */
+footer.ty-footer {
+  border-top: 0;
+}
+
+.footer-item:hover {
+  background: var(--text-color) !important;
+  color: var(--bg-color) !important;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 2px var(--primary-color);
+}
+
+/* Windows Unibody megamenu */
+.megamenu-opened header {
+  background-image: none;
+}
+
+#top-titlebar, #top-titlebar * {
+  color: inherit;
+}
+
+#megamenu-content {
+  padding-top: 28px;
+  background: var(--megamenu-bg-color);
+  color: var(--text-color);
+}
+
+.megamenu-menu-panel:not(:first-of-type) {
+  margin-top: 48px;
+}
+
+#megamenu-content .long-btn {
+  border-color: var(--megamenu-button-border-color);
+  transition: all 0.4s;
+}
+
+#megamenu-content .long-btn:hover {
+  border-color: var(--primary-color);
+  background: var(--megamenu-item-hover-bg-color);
+  color: var(--megamenu-item-hover-text-color) !important;
+}
+
+#recent-file-panel-action-btn {
+  background: inherit;
+  border-color: var(--megamenu-button-border-color);
+  transition: all 0.4s;
+}
+
+#recent-file-panel-action-btn:hover {
+  border-color: var(--primary-color);
+  background: var(--megamenu-item-hover-bg-color);
+  color: var(--megamenu-item-hover-text-color);
+}
+
+#recent-document-table {
+  border: 1px solid var(--accent-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+  background-color: inherit;
+}
+
+#recent-file-panel tbody tr:hover {
+  background-color: var(--megamenu-item-hover-bg-color) !important;
+}
+
+#recent-file-panel tbody tr:hover td:nth-child(1) {
+  color: var(--megamenu-item-hover-text-color);
+}
+
+/* Windows Unibody sidebar */
+#megamenu-menu-sidebar {
+  background: var(--megamenu-sidebar-bg-color);
+  color: var(--text-color);
+}
+
+.megamenu-menu-header, .megamenu-menu-list li:not(.saved) a {
+  transition: all 0.4s;
+}
+
+.megamenu-menu-header {
+  border-bottom: var(--window-border);
+}
+
+.megamenu-menu-header:hover, .megamenu-menu-list li:not(.saved) a:not(.active):hover {
+  background: var(--megamenu-sidebar-hover-bg-color);
+}
+
+.megamenu-menu-list li a.active {
+  background: var(--megamenu-sidebar-active-bg-color) !important;
+}
+
+#m-saved {
+  background: inherit;
+  color: inherit;
+}
+
+#megamenu-menu-list {
+  margin: 0;
+}
+
+.theme-preview-div {
+  transition: all 0.4s;
+}
+
+.theme-preview-div:hover {
+  border: 4px solid var(--primary-btn-border-color);
+}
+
+.theme-preview-div.active, .theme-preview-div.active:hover {
+  border: 4px solid var(--primary-color);
+}
+
+.theme-preview-div.active i {
+  color: var(--primary-color);
+}
+
+/* Source Code */
+.cm-s-typora-default .cm-s-inner.CodeMirror-line {
+  border: 0 !important;
+}
+
+/* Print/PDF */
+@media print {
+  #write ol > li,
+  #write ul > li {
+    color: var(--text-color);
+  }
+  #write h1::before, #write h2::before, #write h3::before,
+  #write h4::before, #write h5::before, #write h6::before {
+    display: none;
+  }
+}
+
+/* Theme adapted from https.//codemirror.net/theme/3024-day.css */
+/*
+
+    Name:       3024 day
+    Author:     Jan T. Sott (http://github.com/idleberg)
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+
+.cm-s-inner.CodeMirror, .cm-s-inner .CodeMirror-gutters {
+  background: #f7f7f7 !important;
+  color: #3a3432 !important;
+}
+
+.cm-s-inner .CodeMirror-cursor {
+  border-left: solid thin #3a3432 !important;
+}
+
+.cm-s-inner .CodeMirror-line::selection, .cm-s-inner .CodeMirror-line > span::selection, .cm-s-inner .CodeMirror-line > span > span::selection { background: #d6d5d4; }
+.cm-s-inner .CodeMirror-line::-moz-selection, .cm-s-inner .CodeMirror-line > span::-moz-selection, .cm-s-inner .CodeMirror-line > span > span::selection { background: #d9d9d9; }
+
+.cm-s-inner .CodeMirror-gutters { background: #f7f7f7; border-right: 0px; }
+.cm-s-inner .CodeMirror-guttermarker { color: #db2d20; }
+.cm-s-inner .CodeMirror-guttermarker-subtle { color: #807d7c; }
+.cm-s-inner .CodeMirror-linenumber { color: #807d7c; }
+
+.cm-s-inner .CodeMirror-cursor { border-left: 1px solid #5c5855; }
+
+.cm-s-inner span.cm-comment { color: #cdab53; }
+.cm-s-inner span.cm-atom { color: #a16a94; }
+.cm-s-inner span.cm-meta { color: inherit; }
+.cm-s-inner span.cm-number { color: #a16a94; }
+
+.cm-s-inner span.cm-property, .cm-s-inner span.cm-attribute { color: #01a252; }
+.cm-s-inner span.cm-keyword { color: #db2d20; }
+.cm-s-inner span.cm-string { color: #f2b01d; }
+
+.cm-s-inner span.cm-variable { color: #01a252; }
+.cm-s-inner span.cm-variable-2 { color: #01a0e4; }
+.cm-s-inner span.cm-def { color: #e8bbd0; }
+.cm-s-inner span.cm-bracket { color: #3a3432; }
+.cm-s-inner span.cm-tag { color: #db2d20; }
+.cm-s-inner span.cm-link { color: #a16a94; }
+.cm-s-inner span.cm-error { background: #db2d20; color: #5c5855; }
+
+.cm-s-inner .CodeMirror-activeline-background { background: #e8f2ff; }
+.cm-s-inner .CodeMirror-matchingbracket { text-decoration: underline; color: #a16a94 !important; }
+
+.CodeMirror-selectedtext, .CodeMirror-selected {
+  background: #f4dbdb !important;
+}
+/* 
+  Middle East - Day
+  Typora RTL theme
+  design: isapanah.com
+  date: 2019
+  version: 1.1
+*/
+
+@import url("file:////home/sad/snap/typora/72/.config/Typora/themes/");
+@import url("file:////home/sad/snap/typora/72/.config/Typora/themes/");
+
+/** ROOT VARIABLES **/
+:root {
+  --bg-color: #fbfbfb; /* change background */
+  --text-color: #333333; /* change text color */
+  --md-char-color: #b4b4b4; /* change color of meta characetrs like `*` in markdown */
+  --meta-content-color: #757575; /* change color of meta contents like image text or link address in markdown */
+  --link-color: #db4d52; /* change color of hyperlinks */
+
+  --primary-color: #db4d52; /* primary color */
+  --primary-btn-border-color: #be2f34; /* primary color for buttons */
+  --primary-btn-text-color: #000; /* primary text color for buttons */
+  --accent-color: #d0d0d0; /* background accent color */
+
+  --window-border: 1px solid #16161a; /* border for sidebar, etc */
+
+  --active-file-bg-color: #16161a; /* background color if list item in file tree or file list */
+  --active-file-text-color: inherit; /* text color for selected file */
+  --active-file-border-color: #777; /* border color for selected file */
+  --active-search-item-bg-color: #23242b; /* background color for active search item */
+
+  --side-bar-bg-color: #2e3235; /* change background of sidebar*/
+  --item-hover-bg-color: #202020; /* background of control items when hover, like menu in sidebar*/
+  --item-hover-text-color: white; /* text color upon hovering over menu items */
+  --search-hit-bg-color: #db4d5230;
+  --search-select-text-color: var(--text-color); /* Text color for selected searched text */
+  --search-select-bg-color: #db4d5270; /* Background color for selected searched text */
+  --rawblock-edit-panel-bd: var(--accent-color); /* Background color for inline HTML "edit panel" blocks */
+  --monospace: "Cousine"; /* monospace font for codes, fences */
+
+  --megamenu-bg-color: var(--bg-color); /* background color for unibody megamenu */
+  --megamenu-sidebar-bg-color: var(--side-bar-bg-color); /* background color for megamenu sidebar */
+  --megamenu-sidebar-hover-bg-color: #161819; /* background color for hovering megamenu sidebar items */
+  --megamenu-sidebar-active-bg-color: #101010; /* background color for active megamenu sidebar items */
+  --megamenu-button-border-color: #9292928f; /* background color for megamenu buttons */
+  --megamenu-item-hover-bg-color: #e6e6e6; /* background color for hovering megamenu items */
+  --megamenu-item-hover-text-color: #222222; /* text color for hovering megamenu items */
+}
+
+/** TAGS **/
+
+mark {
+  background: #adfe96;
+}
+
+code {
+  background: #f7f7f7;
+}
+
+/* Tables */
+thead {
+  background: #d0d0d0;
+}
+
+table tr:nth-child(2n) {
+  background: #e6e6e6;
+}
+
+/* Footnote */
+sup.md-footnote {
+  background: #dddddd;
+}
+
+/* Sidebar */
+#typora-sidebar * {
+  color: var(--bg-color);
+}
+
+/* Windows Unibody sidebar */
+#megamenu-menu-sidebar, .megamenu-menu-list li:not(.saved) a:not(.active):hover, .megamenu-menu-list li a.active {
+  color: var(--bg-color) !important;
+}
+
+
+
+</style><title>PixleTheory</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='زندگی-یه-تصویره-اما-ما-توی-یه-پیکسل-زندگی-می-کنیم'><span>زندگی یه تصویره اما ما توی یه پیکسل زندگی می کنیم!</span></h1><p><span>خب، این </span><strong><span>ممدِ</span></strong><span> قصه ای ما است:</span></p><center><img src="PixleTheory.assets/mamad.jpg" alt="Paris"></center><p><span>و اینم </span><strong><span>امروزِ</span></strong><span>:</span></p><center><img src="PixleTheory.assets/today.png" alt="Paris"></center><p><span>ظاهرا ممد و امروز با هم رابطه دارند:</span></p><center><img src="PixleTheory.assets/today&amp;mmad.png" alt="Paris"></center><p><span>رابطه نبستا خوب پیش می ره و ممد هم خوشحال به نظر می رسه، اما مدتیه که ممد متوجه شده امروز اون روزی نیست که قبلا باهاش قرار می زاشت. اونا بعضی وقت ها با هم خوش می گذورنن ولی ممد همش این احساس رو داره که با یه دوشنبه تکراری و بدون هیجان داره وقت اش رو می گذرونه. این قطعا رابطه ای نیست که ممد دوست داشته باشه براش برنامه بریزه و بلند مدت بهش فکر کنه. ممد ما دنبال یه چیز هیجان انگیز تر می گرده.</span>
+<span>چون اون میدونه که این رابطه موقتیه، پس خیلی هم انزژی براش نمی زاره و بیشتر فکرش درگیر فکر کردن به کسه دیگه ایه. </span><strong><span>فردا</span></strong><span>، فردا کسی که ممد دوست داره باهاش وارد رابطه بشه، پرشور و هیجان انگیز. اون میدونه که باید صبر کنه تا فردا اش برسه. زمانی این فردا می رسه که ممد تو شغل اش موفق شده باشه و توی یه شهر رویایی زندگی کنه. ممد ما به یه همچین چیزی فکر میکنه :</span></p><center><img src="PixleTheory.assets/today dreaming.png" alt="Paris"></center><p>&nbsp;</p><p><span>اون می دونه که </span><strong><span>فردا حتما یه روزی میرسه</span></strong><span>، در همین حال ممد یه برنامه ای دیگه ام داره. هفته ای دیگه قراره یه افزایش حقوق تپل بگیره و به محض اینکه این اتفاق بیفته با </span><strong><span>امروز</span></strong><span> بهم میزنه و دنبال رابطه با یه روز دیگه می گرده. چه روزی؟ روزی که حقوق ممد زیاد می شود! البته درسته که اون روزم در حد و اندازه های ممد نیست و به رابطه بلند مدت بهش فکر نمی کنه. اما بهرحال از روزی که الان باهاش رابطه داره خیلی باحال تر و هیجان انگیز تره.</span>
+<span>صبح روزی که ممد افزایش حقوق اش رو میگیره، خیلی خوش حال تر از خواب بیدار می شه و </span><strong><span>روز جدیدش</span></strong><span> رو ملاقات می کنه! حالا اون یه آدم جدید شده با یه روز جدید، ممد همین الانم ازش خوشش اومده.</span></p><center><img src="PixleTheory.assets/today 2 new.png" alt="Paris" style="zoom:140%;"></center><p><span>درست همون شب ممد می ره یه رستوران گرون که تا همین دیروز جرئت نمی کرد بره. ممد ما یه آیفون آخرین ورژن هم می خره تا روز خودش رو تکمیل کرده باشه. </span>
+<span>الان وضعیتش اینجوریه:</span></p><center><img src="PixleTheory.assets/today 2 excited.png" alt="Paris" style="zoom:140%;"></center><p><span>دو هفته از ماجرا می گذره و ممد دوباره می ره همون رستوران، اما انگار یه چیزی فرق کرده غذاش هنوزم خیلی خوش مزه است ولی اون کیف دفعه ای قبلی رو نداره، انگار یه مشکلی هست. </span></p><center><img src="PixleTheory.assets/today 2 sad.png" alt="Paris"></center><p><span>یه ماه بعد از این ماجرا وقتی که میره گوشی خودش رو عوض کنه و نسخه ای جدید تر آیفون رو بگیره. با خرید گوشی جدید حس و حال اش هیچ تغییری نمی کنه، برای ممد این خیلی عجبیب بود. تا اینکه چند روز بعد بیدار می شه و می بینه که امروز خیلی شبی همون </span><strong><span>روزیه</span></strong><span> که ترکش کرده بود. ممد کلا گیج شده و متوجه نمی شه که، چرا کسی رو که ترک کرده بود دوباره برگشته. چرا دست از سرش ور نمی داره؟</span>
+<span> ممد ما الان اینجوری به سر میبره:</span></p><center><img src="PixleTheory.assets/today 2 gone.png" alt="Paris" style="zoom:140%;"></center><p><span>شرایط یه مقدار ناامید کننده شده، اما مشکل جدی نیست و ممد داره خودش رو جمع و جور میکنه و می دونه که این افزایش حقوق، خیلی هم قرار نبود تغییر خاصی ایجاد کنه. و تمرکز اش رو میزاره روی اون </span><strong><span>فردای</span></strong><span> که می دونه به زودی می رسه. حالا </span><strong><span>خیلی هم مهم نیست که الان خوش حال نیست</span></strong><span> و اون </span><strong><span>فردا</span></strong><span> بلاخره می رسه.</span>
+<span>چند سال به همین منوال می گذره و حالا ممد، یک هفته ای خیلی مهم در پیش داره. اول از همه، بعد از چندین سال مجرد بودن با یه دختر فوق العاده ملاقات می کنه و خیلی سریع از هم خوششون میاد. دختره دقیقا همون کسی که ممد ما سال ها انتظارش رو می کشید. بعد از چندتا قرار ملاقات الان دیگه به هم نزدیک شدن. دقیقا تو همین زمان استارتاپی که ممد و چند تا از همکاراش پارسال راه انداختن گرفته و اینور و اونور خبرساز شده. ممد می دونست که این کارش بالاخره می گیره. به نظر میاد </span><strong><span>فردا</span></strong><span> بالاخره از راه رسیده. همون فردای که توش ممد هم توی شغل اش خیلی موفقه هم یه همسر خیلی مناسب برای خودش پیدا کرده. این روزی بود که ممد رویاش رو داشت.</span></p><p>&nbsp;</p><center><img src="PixleTheory.assets/today 3 excited.png" alt="Paris"></center><p>&nbsp;</p><p><span>این همون زندگی ایکه ممد می دونست بلاخره بهش می رسه. دوشنبه های ممد دیگه قرار نیست معمولی و خسته کننده باشه و اون </span><strong><span>امروز</span></strong><span> تکراری دیگه سر و کلش هیچ وقت پیدا نمی شه. خیلی طول نکشید که ممد متوجه شد، کم کم داره اتفاقایی می افته.</span></p><p><span> بعد از چند ماه با اینکه رابطه اش با پاتنرش داره خوب پیش میره و استارتاپ اش حتی بیشتر هم پیشرفت کرده، اما ممد دیگه اون قدر هم هیجان نداره و همه چی داره براش معمولی می شه. سرش از قبل خیلی شلوغ تر شده و همیشه در حال کاره. درسته که هنوز هم از امروزش اش راضیه ولی دیگه مثل چند ماه پیش شرایط خیلی باب دل اش نیست.</span>
+<span>اینجوریاس:</span></p><center><img src="PixleTheory.assets/today 3 sad.png" alt="Paris"></center><p>&nbsp;</p><p><span>یک سال از این داستان می گذره. ممد الان خیلی پول دارتر شده. اما همه ای اینا دیگه براش کاملا عادی شده. یکی از دوستاش توی شغل اش حتی از ممد هم موفق تره و ممد به این فکر می کنه که، اگه جای اون بود شاید حال دل اش بهتر بود. یکی دیگه از دوستاش، بیشتر با پاتنرش خوش می گذورنه و ممد با خودش فکر میکنه که چقدر خوب می شد اگه منم با پاتنرم این جوری باشم. و اما ...</span>
+<span>ممد یه روز از خواب بیدار می شه و میبینه که دوباره اینجاست:</span></p><center><img src="PixleTheory.assets/today 3 bare.png" alt="Paris" style="zoom:140%;"></center><p><span>ممد باورش نمیشه. دوباره اون (</span><strong><span>امروز</span></strong><span>) اینجا چه غلطی میکنه؟</span>
+<span>ممد تصمیم میگره که یه حکم منع ملاقات برای </span><strong><span>امروز</span></strong><span> بگیره که دیگه مزاحم اش نشه، اما بعد بیخیال اش می شه. مثل اینکه قرار نبود با &quot;</span><strong><span>روزی که شریک زندگیم رو پیدا می کنم و تو شغلم موفق می شم</span></strong><span>&quot; هم رابطه ای طولانی داشته باشه. حالا روز واقعی که ممد براش تلاش میکنه روزیه که استارتاپ اش رو می فروشه و با پارتنرش ازدواج میکنه. این اون روزیه که ممد فکر می کنه واقعا خوشحال می شه.</span></p><p>&nbsp;</p><h3 id='پایان-داستان'><span>پایان داستان</span></h3><hr><p>&nbsp;</p><p><span>مشکل زندگی ممد برای همه ای ما آشناست و به نظر هیچ وقت حل نمی شه. این مشکل یه جورایی به </span><strong><span>نظریه ای پیکسل</span></strong><span> مربوط میشه که، الان باهم راجب اش صحبت می کنیم. مشکل اینکه، ممد زندگیش رو یه تصویر پر رنگ و لعاب می بینه که یه داستان شنیدنی و حماسی رو روایت می کنه، و فرض اش اینکه خوشبختی ایش توی بهتر و زیبا تر کردن  این </span><strong><span>تصویر کلی</span></strong><span> خلاصه می شه. در حالی که این مدل نگاه اشتباه است. چون ممد داخل یه تصویر زندگی نمی کنه، بلکه اون داره داخل پیکسل های این تصویر زندگی می کنه. هر روزی تو یکی از این پیکسل ها، اون باید یاد بگیره که چجوری از پیکسل ها (روزهای معمولی) لذت ببره.</span></p><p>&nbsp;</p><center><img src="PixleTheory.assets/pixel.png" alt="Paris"></center><p>&nbsp;</p><p><span>بنابراین در حالی که هزاران روز معمولی با ممد وارد رابطه می شند. ممد پیکسل ها رو فراموش کرده و داره تمام تلاش اش رو می کنه که </span><strong><span>تصویر کلی</span></strong><span> بهتری برای خودش بسازه. در حالی که </span><strong><span>دوشنبه ای معمولی</span></strong><span> چیزیه که داره زندگی و تجربه اش می کنه. تصور ممد باعث می شه که همیشه فکر کنه رابطه اش با امروز موقتیه. در حالی که رابطه اش با امروز همیشگی و اجتناب ناپذیره، ممد باید این رو قبول کنه و </span><strong><span>امروز</span></strong><span> رو در آغوش بگیره تا بتونه خوش حال زندگی کنه.</span></p><p><strong><span>تصویر کلی</span></strong><span> چیزیه که افراد دیگه از زندگیمون می بینند و ممکنه بر اساس اون بگن که وای به شما چقدر خوش می گذره. مخصوصا تو زمانی که ما زندگی می کنیم و با شبکه های اجتماعی، این تصویرِ کلیِ که خیلی ارزشمند شده و تمام افراد تلاش می کنند که تصویر خیلی بهتری داشته باشند. آدام ها به خودشون می گن: من باید سعی کنم تصویر زندگی ایم رو اینطوری کنم تا بتونم لذت ببرم، ببین طرف این دست آوردها رو داره و خوشبخته. فقط وقتی که به آدم ها به اندازه ای کافی نزدیک می شیم می فهمیم که مهم نیست تصویر زندگییشون چه شکلیه در نهایت اون ها هم همون دغدغه ها رو دارند و تلاششون اینکه از زندگی روزانه و تکراری ایشون لذت ببرند. یا خودشون رو با وعده ای اینکه اگه به فلان دست آورد برسم بعد اش خوشحال می شم گول می زنند.</span></p><p><span>زمانی احساس خوش حالی می کنیم که از روزهای معمولی و دوشنبه های تکراری لذت ببریم و یه روزمره خوب داشته باشیم. برای اینکه ممد ما توی دوشنبه های معمولی زندگیش بیشتر لذت ببره. یه سری کار میشه کرد که از نظر عملی ثابت شده که رضایت شخصی رو بالا می بره، از جمله گذروندن وقت با افرادی که دوستشون دارید، خوب خوابیدن و ورزش کردن، انجام کارهایی که تو اونا مهارت دارید، مهربونی کردن، و خیلی کارهای دیگه که خودتون هم می دونید. </span></p><p>&nbsp;</p><p><span>Tim Urban نویسنده نسخه ای اصلی این داستان یه بلاگ دیگه داره راجب انتخاب شریک زندگی که توش به یه نکته ای خیلی ضریفی اشاره می کنه که بی ربط به بحث مون نیست. میگه:‌</span></p><blockquote><p><strong><span>کسی رو انتخاب کنید که بتونید 10 هزار شب معمولی باهاش شام بخورد و از اون شام لذت ببرید نه کسی که ممکنه مراسم عروسی بهتری باهاش داشته باشید. (بر اساس پیکسل انتخاب کنید نه بر اساس تصویر بیرونی)</span></strong></p></blockquote><p>&nbsp;</p><p><strong><span>سخن پایانی</span></strong><span>:‌ این متن اقتباسی از بلاگ Tim Urban بود که همه ای ما مفهوم اش رو تا حالا درک کردیم ولی هر چند وقتی نیاز به </span><strong><span>یادآوری</span></strong><span> داریم. گفتم احتمالا برای افراد دیگه هم یادآوری خوبی باشه و به خیلی از دوستام پیشنهاد کردم ولی از اون جایی که همه توانایی خوندن متن انگلیسی رو ندارند تصمیم گرفتم نسخه ای فارسی، از اون چه که خودم درک کردم رو بنویسم. من در زمینه ای نویسندگی، مهارت و دانشی ندارم و همیشه در نگارش مشکل داشتم. اما سعی کردم مفهوم نسخه ای انگلیسی رو تا حد امکان انتقال بدم و جذابیت اش رو حفظ کنم. در نهایت امیدوارم این مطلب براتون مفید بوده باشه و دوشنبه های معمولی بهتون خوش بگذره.</span></p><ul><li><span>از دوستام که تو نوشتن اش کمک ام کردن ممنونم، خودشون می دونند!</span></li></ul><p>&nbsp;</p><p><span>نویسنده:‌ سجاد ایوبی ام از تهران </span>😄<span> اگه می خواید بیشتر با من آشنا بشید </span><a href='http://sajjjadayobi.github.io/'><span>اینجا</span></a><span> رو چک کنید!</span></p><hr><p>&nbsp;</p><h3 id='منابع-اصلی'><span>منابع اصلی:</span></h3><ul><li><a href='https://waitbutwhy.com/2013/11/life-is-picture-but-you-live-in-pixel.html'><span>نسخه ای اصلی بلاگی که از آن اقتباس شده (انگلیسی)</span></a></li><li><a href='https://www.ted.com/talks/tim_urban_inside_the_mind_of_a_master_procrastinator?language=en'><span>سخرانی  Tim Urban  در Tedtalk (با زیرنویس فارسی)</span></a></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
