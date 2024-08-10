@@ -1,7 +1,8 @@
 ---
-title: How to make learning more impactfull?
+title: Making My Learnings Impactful
 description: How I want to align my learnings with work, recogntiion, income and other goals in my life.
 date: 2024-08-10 00:00:00
+author: 1
 categories: [content-creation, life]
 tags: [writing] 
 ---
