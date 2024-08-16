@@ -4,12 +4,14 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-# Hi, I'm Sajjad Ayoubi 👋
-I'm a lead data scientist @ [divar.ir](https://divar.ir/) which is the bigest classified ad in middle east.
+# Hello, I'm Sajjad Ayoubi 👋
 
-Growing up, I always wanted to make new things. When I learned about Computer Science in my teens, I realized that I could make cool things with it. Since then, Artificial Intelligence became my tool for doing so. I've used Youtube's open courses as my university to learn Programming, English, Math, AI, and many other subjects. Every day, I strive to be better 1% at a time, and to be more productive. My interests include Neuroscience and Psychology, Personal Development, and Making Friends with Nice People.
+At 23, I currently lead a team @ [Divar.ir](https://divar.ir), the largest classified ad platform in the Middle East. My team and I are dedicated to optimize human-in-the-loop processes with advanced technologies like large language models (LLMs) and other machine learning techniques. Over the years, I've developed a keen interest in deep learning and machine learning, striving to create solutions that tackle real-world problems in various sectors.
 
-I write a lot, for myself and others, to learn and teach experinces and mistakes.
+I became fascinated with coding as a teenager, enjoying how it allowed me to construct things and learn from failures without significant cost. This led me to teach myself through resources like YouTube, where I learned not just programming but also English and AI. I believe in the power of small, daily improvements with books, blogs and videos. I'm also intrested in psychology, decision making and neuroscience or anything related to human nature.
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+Writing helps me to process what I’ve learned and to share insights with others. 
+I write knowlege docs, personal and life docs and many other things 😃
+
+> Now let's solve problems.
 {: .prompt-tip }
