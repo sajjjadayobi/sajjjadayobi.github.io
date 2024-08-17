@@ -1,13 +1,13 @@
 ---
 title: Manifesto of our Team 📐
-description: Standards and Practices of our team to deliver
+description: Standards and Practices of our team to deliver high quality software
 date: 2024-08-17 00:00:00
 author: Sajjad
 categories: [leadership]
 tags: [manifesto, leader, practices] 
 image:
   path: /assets/img/manifesto/card.jpg
-  alt: Manifesto is the at heart of our team
+  alt: Manifesto is at the heart of our team
 ---
 
 

@@ -5,6 +5,9 @@ date: 2024-08-10 00:00:00
 author: 1
 categories: [content-creation, life]
 tags: [writing] 
+image:
+  path: /assets/img/learning/card.png
+  alt: Manifesto is at the heart of our team
 ---
 
 At 23 years old, based in Iran, I currently have the opportunity to serve as a lead data scientist at [Divar.ir](https://divar.ir), a prominent classified ads platform in the Middle East. My primary focus is on constant learning and knowledge sharing while addressing real-world issues using data science, software development, leadership, and project management skills. I have a strong passion for problem-solving and am always seeking ways to enhance my abilities in this area by reading books, working on problems and studying others.
@@ -43,4 +46,3 @@ Additionally, studying successful content creators like Jadi, Jeremy Havard, Yan
 # Investing in Learning 🏦
 As I embark on this journey to enhance my writing and communication skills, I recognize the importance of continuous learning. There are several key areas I plan to focus on to deepen my expertise and become more effective in my endeavors. I have questions like: How to increase the quality of my wirtings? or How to advertise and markting for my writings?
 
-> Now, Solve Problems!
