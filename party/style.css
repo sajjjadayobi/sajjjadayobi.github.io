@@ -1,13 +1,26 @@
 /* Wedding party landing page styles */
 
+/* Design tokens */
+:root {
+  --font-base: 'Vazir', sans-serif;
+  --color-bg-light: #f6fbf7;
+  --color-bg-light-2: #ffffff;
+  --color-text: #333;
+  --color-accent: #4caf50;
+  --color-accent-dark: #2e8b57;
+  --color-card-bg: #f5fcf7;
+  --color-card-border: #a4d5b1;
+  --radius: 12px;
+}
+
 /* Root & typography */
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Vazir', sans-serif;
-  background: linear-gradient(135deg, #f6fbf7 0%, #ffffff 70%);
-  color: #333;
+  font-family: var(--font-base);
+  background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-light-2) 70%);
+  color: var(--color-text);
   /* Allow natural page height so the user can scroll if needed */
   min-height: 100dvh;
   height: auto;
@@ -33,15 +46,15 @@ main {
 
 /* Card */
 .card {
-  max-width: 540px;
-  background: #f5fcf7; /* very light green */
-  border: 2px solid #a4d5b1;
+  max-width: min(34rem, 90vw);
+  background: var(--color-card-bg);
+  border: 2px solid var(--color-card-border);
   box-shadow: 0 12px 32px rgba(0,0,0,0.08), 0 28px 72px rgba(0,0,0,0.06);
-  border-radius: 12px;
+  border-radius: var(--radius);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 3rem 6rem; /* taller card */
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem) clamp(3.5rem, 6vw, 6rem);
   text-align: center;
   animation: weddingIntro 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) both, float 6s ease-in-out infinite 1.2s;
   position: relative;
@@ -51,7 +64,7 @@ main {
 /* Decorative headline */
 .card h1 {
   position: relative;
-  font-size: 2.4rem;
+  font-size: clamp(1.75rem, 4vw + 1rem, 2.4rem);
   font-weight: 700;
   margin: 0 0 1.25rem; /* tighter */
 }
@@ -144,15 +157,11 @@ p {
   font-family: inherit;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--btn-bg, var(--color-accent));
 }
 
-.btn.neshan {
-  background: #4caf50; /* green */
-}
-
-.btn.balad {
-  background: #2e8b57; /* darker green */
-}
+.btn.neshan { --btn-bg: var(--color-accent); }
+.btn.balad { --btn-bg: var(--color-accent-dark); }
 
 .btn:hover,
 .btn:focus-visible {
@@ -298,7 +307,8 @@ footer {
   align-items: center;
   justify-content: space-between;
   gap: 0.7rem;
-  width: 100%;
+  align-self: center; /* center align like buttons */
+  width: auto; /* shrink to content to align nicely with buttons */
   font-size: 0.95rem;
   color: #2e7d4f;
   background: linear-gradient(135deg, rgba(236, 255, 238, 0.9) 0%, rgba(253, 255, 254, 0.9) 100%);
@@ -308,6 +318,8 @@ footer {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   animation: fadeIn 0.8s ease-out 0.3s both;
   border: 1px solid rgba(76, 175, 80, 0.24);
+  background-size: 200% 100%; /* enable gradient slide */
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-position 0.35s ease;
 }
 
 @media (max-width: 480px) {
@@ -395,6 +407,11 @@ body.dark {
   /* Soft blush gradient for romantic alternate theme */
   background: linear-gradient(135deg, #fffafd 0%, #ffeef6 60%, #fff6fa 100%);
   color: #4d4d4d;
+  --color-bg-light: #fffafd;
+  --color-bg-light-2: #fff6fa;
+  --color-card-bg: #ffffff;
+  --color-card-border: #f4b8d4;
+  --color-accent: #e48abd;
 }
 
 body.dark .card {
@@ -430,4 +447,16 @@ body.dark .btn {
 body.dark .btn:hover,
 body.dark .btn:focus-visible {
   box-shadow: 0 6px 20px rgba(228,138,189,0.25);
+}
+
+/* Cute hover animation */
+.info-box:hover {
+  transform: translateY(-4px) scale(1.03) rotate(-1deg);
+  background-position: 100% 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .info-box:hover { transform: none; }
 }
