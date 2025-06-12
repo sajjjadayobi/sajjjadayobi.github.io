@@ -8,7 +8,8 @@ body {
   font-family: 'Vazir', sans-serif;
   background: linear-gradient(135deg, #f6fbf7 0%, #ffffff 70%);
   color: #333;
-  min-height: 100%;
+  height: 100dvh; /* fixed viewport height */
+  min-height: 100dvh;
   overflow: hidden; /* disable scrolling */
   overscroll-behavior: none; /* prevent bounce on mobile */
 }
@@ -16,7 +17,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100%;
 }
 
 /* Hero section */
