@@ -36,7 +36,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3.5rem 3rem 4.5rem; /* extra bottom space */
+  padding: 3.5rem 3rem 5.5rem; /* more bottom space for actions */
   text-align: center;
   animation: weddingIntro 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) both, float 6s ease-in-out infinite 1.2s;
   position: relative;
@@ -206,13 +206,13 @@ footer {
 }
 
 .card::before {
-  bottom: 0.75rem;
+  bottom: 0.75rem; /* keep inside card */
   left: 0.75rem;
+  transform: scaleX(-1); /* horizontally flipped */
 }
 
 .card::after {
-  content: '🌱';
-  bottom: 0.75rem;
+  bottom: 0.75rem; /* keep inside card */
   right: 0.75rem;
   transform: scaleX(-1);
 }
