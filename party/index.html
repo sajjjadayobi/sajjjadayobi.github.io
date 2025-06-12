@@ -2,7 +2,7 @@
 <html dir="rtl" lang="fa">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <title>گلبرگ و سجاد</title>
   <meta name="description" content="به جشن ازدواج سجاد و … دعوتید – ۲۲ خرداد ۱۴۰۴ در باغ تالار مثال">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css">
@@ -48,5 +48,29 @@
     </section>
   </main>
   <footer>منتظرتون هستیم!</footer>
+
+  <!-- Background Amélie piano soundtrack -->
+  <audio id="amelie-audio" preload="auto" loop style="display:none" src="https://archive.org/download/ComptineDunAutreEteLap/Comptine%20D%27un%20autre%20Ete%20Lap%20-%20Yann%20Tiersen.mp3"></audio>
+
+  <script>
+    // Attempt to autoplay at low volume; fallback to first user gesture (click/touch) due to browser policies
+    const playAmelie = () => {
+      const audio = document.getElementById('amelie-audio');
+      if (!audio) return;
+      audio.volume = 0.15;
+      const start = () => audio.play().catch(() => {});
+      // Try immediately
+      start();
+      // Ensure after first user gesture
+      const enable = () => {
+        start();
+        window.removeEventListener('click', enable);
+        window.removeEventListener('touchstart', enable);
+      };
+      window.addEventListener('click', enable, { once: true });
+      window.addEventListener('touchstart', enable, { once: true });
+    };
+    document.addEventListener('DOMContentLoaded', playAmelie);
+  </script>
 </body>
 </html> 
