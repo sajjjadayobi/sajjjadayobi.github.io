@@ -30,7 +30,7 @@
     <section class="card" role="region">
       <h1> خوش اومدید <span class="wave-hand" aria-hidden="true">👋</span></h1>
       <p class="subtitle">ما شما رو به مراسم عقدمون دعوت می‌کنیم.<div class=""></div> خوشحال می‌شیم تو قشنگ‌ترین روزمون کنارمون باشید.</p>
-      <p class="names">سجاد و گلبرگ 🤵🏻👰🏻</p>
+      <p class="names">سجاد و گلبرگ 🤵🏻👰🏻‍♀️</p>
       <p class="datetime">جمعه ۳۰ خرداد ۱۴۰۴ – ساعت ۱۸:۰۰</p>
       <div class="info-box">
         <span class="venue-text">خانه عقد ژانپیر</span>
@@ -41,9 +41,15 @@
         </span>
       </div>
 
+      <!-- Hidden address box -->
+      <div class="address-box" dir="rtl">
+        تهران، ولنجک، خیابان چهارم شرقی، پلاک ۲۴، خانه عقد ژانپیر
+      </div>
+
       <div class="actions">
         <a class="btn balad" href="https://nshn.ir/a4_bvvOOYxOibr" target="_blank" rel="noopener">مسیریابی با نشان</a>
         <a class="btn balad" href="https://balad.ir/p/3k10AFws3zvFwE" target="_blank" rel="noopener">مسیریابی با بلد</a>
+        <button type="button" class="btn balad address">نمایش آدرس</button>
       </div>
     </section>
   </main>
@@ -71,6 +77,17 @@
       window.addEventListener('touchstart', enable, { once: true });
     };
     document.addEventListener('DOMContentLoaded', playAmelie);
+
+    // Toggle address box
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('.btn.address');
+      const box = document.querySelector('.address-box');
+      if (btn && box) {
+        btn.addEventListener('click', () => {
+          box.classList.toggle('show');
+        });
+      }
+    });
   </script>
 </body>
 </html> 
