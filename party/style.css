@@ -8,10 +8,12 @@ body {
   font-family: 'Vazir', sans-serif;
   background: linear-gradient(135deg, #f6fbf7 0%, #ffffff 70%);
   color: #333;
-  height: 100dvh; /* fixed viewport height */
+  /* Allow natural page height so the user can scroll if needed */
   min-height: 100dvh;
-  overflow: hidden; /* disable scrolling */
-  overscroll-behavior: none; /* prevent bounce on mobile */
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain; /* softer mobile bounce */
 }
 
 body {
@@ -158,6 +160,20 @@ p {
   box-shadow: 0 6px 20px rgba(46,139,87,0.25);
 }
 
+/* Venue details inside info-box */
+.venue-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+
+.address-text {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.6;
+}
+
 /* Footer */
 footer {
   padding: 1rem 0;
@@ -275,50 +291,57 @@ footer {
 
 /* Info box containing venue + weather */
 .info-box {
-  margin: 1.2rem 0 0.5rem;
-  display: inline-flex;
+  margin: 1rem 0 0.6rem;
+  display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 1rem;
-  color: #555;
-  background: rgba(76,175,80,0.1);
+  justify-content: space-between;
+  gap: 0.7rem;
+  width: 100%;
+  font-size: 0.95rem;
+  color: #2e7d4f;
+  background: linear-gradient(135deg, rgba(236, 255, 238, 0.9) 0%, rgba(253, 255, 254, 0.9) 100%);
   padding: 0.55rem 1.1rem;
-  border-radius: 16px;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-radius: 14px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   animation: fadeIn 0.8s ease-out 0.3s both;
-  border: 1px solid rgba(76,175,80,0.2);
+  border: 1px solid rgba(76, 175, 80, 0.24);
+}
+
+@media (max-width: 480px) {
+  .info-box {
+    gap: 0.45rem;
+    padding: 0.55rem 0.95rem;
+  }
 }
 
 .venue-text {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.address-text {
+  font-size: 0.9rem;
+  color: #555;
 }
 
 .weather {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.35rem;
-  margin: 0; /* override old margins */
-  background: transparent;
-  padding: 0;
-  border: none;
-  box-shadow: none;
+  gap: 0.3rem;
+  font-weight: 500;
+  background: rgba(46, 139, 87, 0.08);
+  padding: 0.3rem 0.55rem;
+  border-radius: 10px;
 }
 
 .weather-icon {
-  font-size: 1.2rem;
-  animation: iconFloat 3.6s ease-in-out infinite;
+  font-size: 1.25rem;
 }
 
-@keyframes iconFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-4px) rotate(-3deg); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+.weather-temp {
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 /* Hand wave animation */
@@ -339,23 +362,4 @@ h1:hover .wave-hand {
   60% { transform: rotate(-12deg); }
   75% { transform: rotate(8deg); }
   100% { transform: rotate(0deg); }
-}
-
-/* Address box (toggle) */
-.address-box {
-  margin: 0.75rem 0;
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  color: #555;
-  background: rgba(76,175,80,0.08);
-  padding: 0.55rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  animation: fadeIn 0.6s ease-out;
-}
-
-.address-box.show {
-  display: flex;
 }
