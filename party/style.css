@@ -386,3 +386,21 @@ h1:hover .wave-hand {
 @media (prefers-reduced-motion: reduce) {
   .info-box:hover { transform: none; }
 }
+
+/* Funny prank message */
+.prank-message {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e91e63;
+  margin-top: 1rem;
+  animation: shake 0.6s ease-in-out both;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
