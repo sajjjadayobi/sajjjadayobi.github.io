@@ -9,6 +9,8 @@ body {
   background: linear-gradient(135deg, #f6fbf7 0%, #ffffff 70%);
   color: #333;
   min-height: 100%;
+  overflow: hidden; /* disable scrolling */
+  overscroll-behavior: none; /* prevent bounce on mobile */
 }
 
 body {
@@ -36,7 +38,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3.5rem 3rem 5.5rem; /* more bottom space for actions */
+  padding: 4rem 3rem 6rem; /* taller card */
   text-align: center;
   animation: weddingIntro 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) both, float 6s ease-in-out infinite 1.2s;
   position: relative;
@@ -189,7 +191,7 @@ footer {
 /* Responsive */
 @media (max-width: 480px) {
   .card {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem 3.5rem; /* taller on mobile too */
   }
   .card h1 {
     font-size: 2rem;
