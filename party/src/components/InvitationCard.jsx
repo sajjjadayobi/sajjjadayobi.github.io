@@ -99,7 +99,7 @@ const InvitationCard = () => {
             <h1
               className="text-7xl text-amber-50 font-normal leading-tight mb-2"
               style={{
-                fontFamily: 'Amiri, serif',
+                fontFamily: 'Mirza, serif',
                 textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.7)',
                 letterSpacing: '0.05em'
               }}
@@ -127,7 +127,7 @@ const InvitationCard = () => {
             <h2
               className="text-7xl text-amber-50 font-normal leading-tight"
               style={{
-                fontFamily: 'Amiri, serif',
+                fontFamily: 'Mirza, serif',
                 textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.7)',
                 letterSpacing: '0.05em'
               }}
