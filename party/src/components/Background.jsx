@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion'
-import bgImage from '../assets/bg-design.png'
+import bgImage from '../assets/bg-design-compressed.jpg'
 
 const Background = () => {
   // Generate sparkle particles with varied properties
   const generateSparkles = (count) => {
     return [...Array(count)].map((_, i) => {
-      const size = Math.random() * 3 + 1 // 1-4px
-      const isGolden = Math.random() > 0.7 // 30% golden, 70% white
+      const size = Math.random() * 5 + 2 // 2-7px (bigger)
+      const isGolden = Math.random() > 0.6 // 40% golden, 60% white
       const color = isGolden
-        ? `rgba(251, 191, 36, ${0.1 + Math.random() * 0.15})` // amber-400 with low opacity (0.1-0.25)
-        : `rgba(255, 255, 255, ${0.1 + Math.random() * 0.2})` // white with low opacity (0.1-0.3)
+        ? `rgba(251, 191, 36, ${0.15 + Math.random() * 0.25})` // amber-400 with medium opacity (0.15-0.4)
+        : `rgba(255, 255, 255, ${0.15 + Math.random() * 0.25})` // white with medium opacity (0.15-0.4)
 
       return {
         id: i,
@@ -17,14 +17,14 @@ const Background = () => {
         color,
         left: Math.random() * 100,
         top: Math.random() * 100,
-        delay: Math.random() * 5,
-        duration: 3 + Math.random() * 3,
+        delay: Math.random() * 3, // shorter delay (more frequent)
+        duration: 2 + Math.random() * 2, // shorter duration (more frequent)
         moveDistance: 40 + Math.random() * 40, // 40-80px movement
       }
     })
   }
 
-  const sparkles = generateSparkles(80)
+  const sparkles = generateSparkles(150) // increased from 80 to 150
 
   return (
     <div className="fixed inset-0 w-full h-full">
@@ -83,25 +83,25 @@ const Background = () => {
 
       {/* Additional large golden glow particles for ambient effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(25)].map((_, i) => (
           <motion.div
             key={`glow-${i}`}
             className="absolute rounded-full blur-xl"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              width: `${20 + Math.random() * 40}px`,
-              height: `${20 + Math.random() * 40}px`,
-              backgroundColor: `rgba(251, 191, 36, ${0.02 + Math.random() * 0.05})`,
+              width: `${30 + Math.random() * 50}px`,
+              height: `${30 + Math.random() * 50}px`,
+              backgroundColor: `rgba(251, 191, 36, ${0.03 + Math.random() * 0.08})`,
             }}
             animate={{
-              opacity: [0, 0.3, 0],
+              opacity: [0, 0.5, 0],
               scale: [0.8, 1.3, 0.8],
             }}
             transition={{
-              duration: 4 + Math.random() * 3,
+              duration: 3 + Math.random() * 2,
               repeat: Infinity,
-              delay: Math.random() * 4,
+              delay: Math.random() * 3,
             }}
           />
         ))}

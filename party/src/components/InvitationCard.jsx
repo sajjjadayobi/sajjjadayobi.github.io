@@ -72,7 +72,7 @@ const InvitationCard = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="text-center mt-6 mb-1"
+          className="text-center mt-3 mb-1"
         >
           <p className="text-white/70 text-lg tracking-[0.2em] font-semibold mb-2"
              style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Vazirmatn, sans-serif' }}>
@@ -89,19 +89,19 @@ const InvitationCard = () => {
         </motion.div>
 
         {/* Names Section */}
-        <div className="px-8 flex-1 flex flex-col justify-start pt-8">
+        <div className="px-8 flex-1 flex flex-col justify-start pt-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="text-center mb-8"
+            className="text-center mb-6"
           >
             <h1
-              className="text-7xl text-amber-50 font-normal leading-tight mb-2"
+              className="text-7xl text-amber-50 font-bold leading-tight mb-2"
               style={{
-                fontFamily: 'Mirza, serif',
+                fontFamily: 'Vazirmatn, sans-serif',
                 textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.7)',
-                letterSpacing: '0.05em'
+                letterSpacing: '0.08em'
               }}
             >
               گلبرگ
@@ -111,7 +111,7 @@ const InvitationCard = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 1.3 }}
-              className="my-3"
+              className="my-2"
             >
               <span
                 className="text-amber-50/80 text-3xl font-light"
@@ -125,11 +125,11 @@ const InvitationCard = () => {
             </motion.div>
 
             <h2
-              className="text-7xl text-amber-50 font-normal leading-tight"
+              className="text-7xl text-amber-50 font-bold leading-tight"
               style={{
-                fontFamily: 'Mirza, serif',
+                fontFamily: 'Vazirmatn, sans-serif',
                 textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.7)',
-                letterSpacing: '0.05em'
+                letterSpacing: '0.08em'
               }}
             >
               سجاد
@@ -164,7 +164,7 @@ const InvitationCard = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className="text-center mb-12"
+            className="text-center mb-6"
           >
             {/* Top diamond */}
             <div className="flex justify-center mb-2">
@@ -205,7 +205,7 @@ const InvitationCard = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.7 }}
-            className="mb-8 px-6"
+            className="mb-6 px-6"
           >
             <div className="flex items-center justify-between gap-4">
               {/* LEFT: Weather - NO CONTAINER */}
