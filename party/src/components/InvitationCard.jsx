@@ -74,9 +74,9 @@ const InvitationCard = () => {
           transition={{ delay: 0.7 }}
           className="text-center mt-6 mb-1"
         >
-          <p className="text-white/70 text-xs tracking-[0.3em] uppercase font-light mb-2"
-             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>
-            SADRA GARDEN • TEHRAN
+          <p className="text-white/70 text-lg tracking-[0.2em] font-semibold mb-2"
+             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)', fontFamily: 'Vazirmatn, sans-serif' }}>
+            باغ صدرا،‌ شهریار،‌ تهران
           </p>
           {/* Decorative element */}
           <div className="flex justify-center">
@@ -97,13 +97,14 @@ const InvitationCard = () => {
             className="text-center mb-8"
           >
             <h1
-              className="font-playfair text-7xl text-amber-50 font-normal italic leading-tight mb-2"
+              className="text-7xl text-amber-50 font-normal leading-tight mb-2"
               style={{
+                fontFamily: 'Amiri, serif',
                 textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.7)',
-                letterSpacing: '0.02em'
+                letterSpacing: '0.05em'
               }}
             >
-              Golbarg
+              گلبرگ
             </h1>
 
             <motion.div
@@ -113,21 +114,25 @@ const InvitationCard = () => {
               className="my-3"
             >
               <span
-                className="font-playfair text-amber-50/80 text-2xl font-light italic"
-                style={{ textShadow: '0 2px 10px rgba(0,0,0,0.7)' }}
+                className="text-amber-50/80 text-3xl font-light"
+                style={{
+                  fontFamily: 'Vazirmatn, sans-serif',
+                  textShadow: '0 2px 10px rgba(0,0,0,0.7)'
+                }}
               >
-                and
+                و
               </span>
             </motion.div>
 
             <h2
-              className="font-playfair text-7xl text-amber-50 font-normal italic leading-tight"
+              className="text-7xl text-amber-50 font-normal leading-tight"
               style={{
+                fontFamily: 'Amiri, serif',
                 textShadow: '0 4px 20px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.7)',
-                letterSpacing: '0.02em'
+                letterSpacing: '0.05em'
               }}
             >
-              Pajjad
+              سجاد
             </h2>
           </motion.div>
 
@@ -169,16 +174,22 @@ const InvitationCard = () => {
             </div>
 
             <p
-              className="text-white/80 text-xs tracking-[0.2em] uppercase font-light leading-relaxed"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
+              className="text-white/80 text-lg tracking-wider font-normal leading-relaxed"
+              style={{
+                fontFamily: 'Vazirmatn, sans-serif',
+                textShadow: '0 2px 8px rgba(0,0,0,0.8)'
+              }}
             >
-              WE INVITE YOU TO
+              شما را به جشن عشق خود
             </p>
             <p
-              className="text-white/80 text-xs tracking-[0.2em] uppercase font-light leading-relaxed"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
+              className="text-white/80 text-lg tracking-wider font-normal leading-relaxed"
+              style={{
+                fontFamily: 'Vazirmatn, sans-serif',
+                textShadow: '0 2px 8px rgba(0,0,0,0.8)'
+              }}
             >
-              CELEBRATE OUR LOVE
+              دعوت می‌کنیم.
             </p>
 
             {/* Bottom diamond */}
@@ -201,43 +212,55 @@ const InvitationCard = () => {
               <div className="flex-1">
                 <p
                   className="text-white text-base font-light mb-1"
-                  style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}
+                  style={{
+                    fontFamily: 'Vazirmatn, sans-serif',
+                    textShadow: '0 2px 8px rgba(0,0,0,0.8)'
+                  }}
                 >
-                  May 30, 2024
+                  ۹ خرداد ۱۴۰۳
                 </p>
                 <div className="flex items-center space-x-2 mb-1">
                   <span
                     className="text-white text-5xl font-extralight"
-                    style={{ textShadow: '0 4px 12px rgba(0,0,0,0.9)' }}
+                    style={{
+                      fontFamily: 'Vazirmatn, sans-serif',
+                      textShadow: '0 4px 12px rgba(0,0,0,0.9)'
+                    }}
                   >
-                    24°
+                    ۲۴°
                   </span>
                   <IoSunnyOutline className="w-8 h-8 text-amber-400" style={{ filter: 'drop-shadow(0 2px 8px rgba(251,191,36,0.6))' }} />
                 </div>
                 <p
                   className="text-white/80 text-xs font-light"
-                  style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}
+                  style={{
+                    fontFamily: 'Vazirmatn, sans-serif',
+                    textShadow: '0 2px 6px rgba(0,0,0,0.8)'
+                  }}
                 >
-                  Evening in Tehran
+                  عصر تهران
                 </p>
               </div>
 
               {/* RIGHT: Location buttons - text outside, icons in container */}
               <div className="flex flex-col items-center">
                 <p
-                  className="text-white/70 text-[8px] tracking-[0.2em] uppercase text-center mb-2 font-light"
-                  style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+                  className="text-white text-sm tracking-wide text-center mb-2 font-bold"
+                  style={{
+                    fontFamily: 'Vazirmatn, sans-serif',
+                    textShadow: '0 2px 6px rgba(0,0,0,0.8)'
+                  }}
                 >
-                  FIND YOUR WAY
+                  مسیریابی
                 </p>
                 <div
                   className="rounded-[2rem] px-2 py-2"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.08) 100%)',
-                    backdropFilter: 'blur(24px) saturate(120%) brightness(1.05)',
-                    WebkitBackdropFilter: 'blur(24px) saturate(120%) brightness(1.05)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255, 255, 255, 0.2)'
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    backdropFilter: 'blur(24px)',
+                    WebkitBackdropFilter: 'blur(24px)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255, 255, 255, 0.1)'
                   }}
                 >
                   <div className="flex items-center justify-center space-x-2">
@@ -278,14 +301,13 @@ const InvitationCard = () => {
             className="mb-6 px-6"
           >
             <button
-              className="liquid-glass w-full py-4 rounded-[3rem] text-white font-light tracking-[0.25em] uppercase text-sm transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden hover:bg-white/10"
+              className="liquid-glass w-full py-4 rounded-[3rem] text-white font-light tracking-widest text-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden hover:bg-white/10"
               style={{
-                textShadow: '0 2px 6px rgba(0,0,0,0.7)',
-                borderColor: 'rgba(251, 191, 36, 0.4)',
-                boxShadow: '0 0 30px rgba(251, 191, 36, 0.3), 0 8px 32px rgba(0,0,0,0.15), inset 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(251, 191, 36, 0.1)'
+                fontFamily: 'Vazirmatn, sans-serif',
+                textShadow: '0 2px 6px rgba(0,0,0,0.7)'
               }}
             >
-              CONGRATS
+              تبریک
             </button>
           </motion.div>
 

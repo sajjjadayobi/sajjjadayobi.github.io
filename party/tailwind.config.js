@@ -21,8 +21,8 @@ export default {
         },
       },
       fontFamily: {
-        'playfair': ['"Playfair Display"', 'serif'],
-        'sans': ['"Inter"', 'sans-serif'],
+        'amiri': ['"Amiri"', 'serif'],
+        'sans': ['"Vazirmatn"', 'sans-serif'],
       },
       backdropBlur: {
         'xs': '2px',
