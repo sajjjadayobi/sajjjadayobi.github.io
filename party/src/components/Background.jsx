@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion'
+import bgImage from '../assets/bg-design.png'
 
 const Background = () => {
   // Generate sparkle particles with varied properties
   const generateSparkles = (count) => {
     return [...Array(count)].map((_, i) => {
       const size = Math.random() * 3 + 1 // 1-4px
-      const isGolden = Math.random() > 0.3 // 70% golden, 30% white
+      const isGolden = Math.random() > 0.7 // 30% golden, 70% white
       const color = isGolden
-        ? `rgba(251, 191, 36, ${0.3 + Math.random() * 0.4})` // amber-400 with varied opacity
-        : `rgba(255, 255, 255, ${0.2 + Math.random() * 0.3})` // white with varied opacity
+        ? `rgba(251, 191, 36, ${0.1 + Math.random() * 0.15})` // amber-400 with low opacity (0.1-0.25)
+        : `rgba(255, 255, 255, ${0.1 + Math.random() * 0.2})` // white with low opacity (0.1-0.3)
 
       return {
         id: i,
@@ -35,7 +36,7 @@ const Background = () => {
         className="absolute inset-0 w-full h-full"
       >
         <img
-          src="/bg-design.png"
+          src={bgImage}
           alt="Garden Mansion"
           className="w-full h-full object-cover"
         />
@@ -91,10 +92,10 @@ const Background = () => {
               top: `${Math.random() * 100}%`,
               width: `${20 + Math.random() * 40}px`,
               height: `${20 + Math.random() * 40}px`,
-              backgroundColor: `rgba(251, 191, 36, ${0.05 + Math.random() * 0.1})`,
+              backgroundColor: `rgba(251, 191, 36, ${0.02 + Math.random() * 0.05})`,
             }}
             animate={{
-              opacity: [0, 0.6, 0],
+              opacity: [0, 0.3, 0],
               scale: [0.8, 1.3, 0.8],
             }}
             transition={{

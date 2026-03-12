@@ -310,13 +310,6 @@ const InvitationCard = () => {
               تبریک
             </button>
           </motion.div>
-
-          {/* Bottom Home Indicator - NO CHEVRON */}
-          <div className="mt-auto pb-2">
-            <div className="flex justify-center pb-2">
-              <div className="w-32 h-1 bg-white/30 rounded-full" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.4)' }} />
-            </div>
-          </div>
         </div>
 
       </div>
